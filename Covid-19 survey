@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Survey</title>
+  <style>
+   
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .survey-container {
+      width: 400px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      padding: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff416c;
+      box-shadow: 0 0 8px rgba(255,65,108,0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #ff416c;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #d99387;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+   <div class="survey-container">
+    <h2>COVID-19 Survey</h2>
+    <form id="covidSurvey">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label for="symptoms">Symptoms (select all that apply)</label>
+      <textarea id="symptoms" placeholder="e.g. Fever, Cough, Fatigue"></textarea>
+
+      <label for="exposure">Have you been in contact with a COVID-19 patient?</label>
+      <select id="exposure" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Not Sure</option>
+      </select>
+
+      <label for="travel">Recent Travel History</label>
+      <textarea id="travel" placeholder="List countries or cities visited"></textarea>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div> 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  
+  document.getElementById('covidSurvey').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    form.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+    form.style.opacity = 0;
+    form.style.transform = 'translateY(-20px)';
+    setTimeout(() => {
+      alert("Thank you for completing the COVID-19 survey. Your response has been recorded.");
+      // Redirect back to login or a dashboard
+      window.location.href = "login.html";
+    }, 500);
+  });
+
+  document.getElementById('covidSurvey').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Thank you for completing the COVID-19 survey. Your response has been recorded.");
+    // Redirect back to login or a dashboard
+    window.location.href = "login.html";
+  });
+
+    
+  </script>
+</body>
+</html> -->
